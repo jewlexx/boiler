@@ -220,9 +220,9 @@ dependencies = [
 
 [[package]]
 name = "esize"
-version = "0.1.1"
+version = "0.1.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "dfd56b23fa4aaf2adb509263903cf324de91d39e9e75c66d51a7588fbc1ef3f6"
+checksum = "e9037c1ecae110c0873379f8464c5298a51ed6e3b1d459fd284627919c52186c"
 dependencies = [
  "quote",
  "syn",

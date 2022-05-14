@@ -14,4 +14,4 @@ git2 = "0.14.4"
 lazy_static = "1.4.0"
 reqwest = "0.11.10"
 strum = { version = "0.24.0", features = ["derive"] }
-esize = "0.1.1"
+esize = "0.1.2"
