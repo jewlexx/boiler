@@ -6,6 +6,7 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+anyhow = { version = "1.0.57", features = ["backtrace"] }
 clap = "3.1.18"
 crossterm = "0.23.2"
 git2 = "0.14.4"
