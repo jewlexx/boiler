@@ -1,5 +1,7 @@
 use std::io;
 
+mod boiler;
+
 #[macro_use]
 extern crate lazy_static;
 
@@ -11,11 +13,19 @@ use crossterm::{
 };
 use dialoguer::{theme::ColorfulTheme, Select};
 
+use crate::boiler::BoilerOpts;
+
 lazy_static! {
     static ref THEME: ColorfulTheme = ColorfulTheme::default();
 }
 
 fn main() -> anyhow::Result<()> {
+    let x: usize = BoilerOpts::Project.into();
+
+    println!("{}", x);
+
+    return Ok(());
+
     if !io::stdout().is_tty() {
         panic!("is not tty")
     }
