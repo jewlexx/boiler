@@ -1,6 +1,7 @@
 use esize::ENum;
+use strum::{Display, EnumIter};
 
-#[derive(ENum)]
+#[derive(Debug, Copy, Clone, ENum, Display, EnumIter)]
 pub enum BoilerOpts {
     File,
     Project,
