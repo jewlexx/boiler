@@ -2,6 +2,8 @@ use std::io;
 
 mod boiler;
 mod consts;
+
+#[macro_use]
 mod macros;
 
 #[macro_use]
@@ -19,9 +21,11 @@ use dialoguer::{theme::ColorfulTheme, Select};
 use crate::boiler::BoilerOpts;
 
 fn main() -> anyhow::Result<()> {
-    if !io::stdout().is_tty() {
+    if !IS_TTY.to_owned() {
         return Err(anyhow::anyhow!("is not tty"));
     }
+
+    clear_tty!();
 
     let boiler_opts = ["File", "Project"];
 
