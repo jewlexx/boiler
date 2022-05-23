@@ -20,14 +20,8 @@ lazy_static! {
 }
 
 fn main() -> anyhow::Result<()> {
-    let x: usize = BoilerOpts::Project.into();
-
-    println!("{}", x);
-
-    return Ok(());
-
     if !io::stdout().is_tty() {
-        panic!("is not tty")
+        return Err(anyhow::anyhow!("is not tty"));
     }
 
     let boiler_opts = ["File", "Project"];
