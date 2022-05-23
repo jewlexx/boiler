@@ -16,7 +16,7 @@ use crossterm::{
 };
 use dialoguer::Select;
 
-use boiler::BoilerOpts;
+use boiler::BoilerTypes;
 use strum::IntoEnumIterator;
 
 fn main() -> anyhow::Result<()> {
@@ -25,14 +25,6 @@ fn main() -> anyhow::Result<()> {
     }
 
     clear_tty!();
-
-    let boiler_opts: Vec<String> = BoilerOpts::iter().map(|x| x.to_string()).collect();
-
-    Select::with_theme(&*THEME)
-        .with_prompt("What type of boilerplate would you like to generate?")
-        .default(0)
-        .items(&boiler_opts)
-        .interact()?;
 
     Ok(())
 }
