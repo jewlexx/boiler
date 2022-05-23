@@ -1,5 +1,6 @@
 mod boiler;
 mod consts;
+mod errors;
 
 #[macro_use]
 mod macros;
