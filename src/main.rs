@@ -26,5 +26,7 @@ fn main() -> anyhow::Result<()> {
 
     clear_tty!();
 
+    let boiler_type = BoilerTypes::get_type()?;
+
     Ok(())
 }
