@@ -1,5 +1,3 @@
-use std::io;
-
 mod boiler;
 mod consts;
 
@@ -16,9 +14,9 @@ use crossterm::{
     terminal::{Clear, ClearType, SetTitle},
     tty::IsTty,
 };
-use dialoguer::{theme::ColorfulTheme, Select};
+use dialoguer::Select;
 
-use crate::boiler::BoilerOpts;
+use boiler::BoilerOpts;
 
 fn main() -> anyhow::Result<()> {
     if !IS_TTY.to_owned() {
@@ -33,8 +31,7 @@ fn main() -> anyhow::Result<()> {
         .with_prompt("What type of boilerplate would you like to generate?")
         .default(0)
         .items(&boiler_opts)
-        .interact()
-        .unwrap();
+        .interact()?;
 
     Ok(())
 }
