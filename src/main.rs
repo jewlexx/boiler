@@ -17,6 +17,7 @@ use crossterm::{
 use dialoguer::Select;
 
 use boiler::BoilerOpts;
+use strum::IntoEnumIterator;
 
 fn main() -> anyhow::Result<()> {
     if !IS_TTY.to_owned() {
@@ -25,7 +26,7 @@ fn main() -> anyhow::Result<()> {
 
     clear_tty!();
 
-    let boiler_opts = ["File", "Project"];
+    let boiler_opts: Vec<String> = BoilerOpts::iter().map(|x| x.to_string()).collect();
 
     Select::with_theme(&*THEME)
         .with_prompt("What type of boilerplate would you like to generate?")
