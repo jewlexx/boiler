@@ -1,10 +1,13 @@
 use std::io;
 
 mod boiler;
+mod consts;
+mod macros;
 
 #[macro_use]
 extern crate lazy_static;
 
+use consts::*;
 use crossterm::{
     execute,
     style::{Color, Print, ResetColor, SetBackgroundColor, SetForegroundColor},
@@ -14,10 +17,6 @@ use crossterm::{
 use dialoguer::{theme::ColorfulTheme, Select};
 
 use crate::boiler::BoilerOpts;
-
-lazy_static! {
-    static ref THEME: ColorfulTheme = ColorfulTheme::default();
-}
 
 fn main() -> anyhow::Result<()> {
     if !io::stdout().is_tty() {
