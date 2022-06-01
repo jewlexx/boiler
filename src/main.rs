@@ -1,38 +1,3 @@
-// Old code that I will use in future prolly
-// mod boiler;
-// mod consts;
-// mod errors;
-
-// #[macro_use]
-// mod macros;
-
-// #[macro_use]
-// extern crate lazy_static;
-
-// use consts::*;
-// use crossterm::{
-//     execute,
-//     style::{Color, Print, ResetColor, SetBackgroundColor, SetForegroundColor},
-//     terminal::{Clear, ClearType, SetTitle},
-//     tty::IsTty,
-// };
-// use dialoguer::Select;
-
-// use boiler::BoilerTypes;
-// use strum::IntoEnumIterator;
-
-// fn main() -> anyhow::Result<()> {
-//     if !IS_TTY.to_owned() {
-//         return Err(anyhow::anyhow!("is not tty"));
-//     }
-
-//     clear_tty!();
-
-//     let boiler_type = BoilerTypes::get_type()?;
-
-//     Ok(())
-// }
-
 use std::{env, fs};
 
 use anyhow::Context;
