@@ -4,7 +4,7 @@ use anyhow::Context;
 
 fn main() -> anyhow::Result<()> {
     let path = env::args_os()
-        .next()
+        .nth(1)
         .context("Please provide a path to the desired project destination")?;
     let cwd = env::current_dir().context("Failed to parse current dir")?;
 
